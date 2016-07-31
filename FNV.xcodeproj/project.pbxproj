@@ -10,6 +10,9 @@
 		8269D46D1D4BBA28009614CF /* FNV.h in Headers */ = {isa = PBXBuildFile; fileRef = 8269D46C1D4BBA28009614CF /* FNV.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8269D4741D4BBA28009614CF /* FNV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8269D4691D4BBA28009614CF /* FNV.framework */; };
 		8269D4791D4BBA28009614CF /* FNVTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8269D4781D4BBA28009614CF /* FNVTests.swift */; };
+		8269D4841D4BBA97009614CF /* README.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 8269D4831D4BBA97009614CF /* README.rtf */; };
+		8269D4861D4BBE3D009614CF /* fnv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8269D4851D4BBE3D009614CF /* fnv.swift */; };
+		8269D4871D4BBE3D009614CF /* fnv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8269D4851D4BBE3D009614CF /* fnv.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +32,8 @@
 		8269D4731D4BBA28009614CF /* FNVTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FNVTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8269D4781D4BBA28009614CF /* FNVTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FNVTests.swift; sourceTree = "<group>"; };
 		8269D47A1D4BBA28009614CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8269D4831D4BBA97009614CF /* README.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = README.rtf; sourceTree = "<group>"; };
+		8269D4851D4BBE3D009614CF /* fnv.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fnv.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +77,8 @@
 			isa = PBXGroup;
 			children = (
 				8269D46C1D4BBA28009614CF /* FNV.h */,
+				8269D4851D4BBE3D009614CF /* fnv.swift */,
+				8269D4831D4BBA97009614CF /* README.rtf */,
 				8269D46E1D4BBA28009614CF /* Info.plist */,
 			);
 			path = FNV;
@@ -177,6 +184,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8269D4841D4BBA97009614CF /* README.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +202,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8269D4861D4BBE3D009614CF /* fnv.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +210,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8269D4871D4BBE3D009614CF /* fnv.swift in Sources */,
 				8269D4791D4BBA28009614CF /* FNVTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,6 +317,7 @@
 		8269D47E1D4BBA28009614CF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -319,12 +330,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.cedricponchy.FNV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		8269D47F1D4BBA28009614CF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
