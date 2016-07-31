@@ -10,7 +10,6 @@
 		8269D46D1D4BBA28009614CF /* FNV.h in Headers */ = {isa = PBXBuildFile; fileRef = 8269D46C1D4BBA28009614CF /* FNV.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8269D4741D4BBA28009614CF /* FNV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8269D4691D4BBA28009614CF /* FNV.framework */; };
 		8269D4791D4BBA28009614CF /* FNVTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8269D4781D4BBA28009614CF /* FNVTests.swift */; };
-		8269D4841D4BBA97009614CF /* README.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 8269D4831D4BBA97009614CF /* README.rtf */; };
 		8269D4861D4BBE3D009614CF /* fnv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8269D4851D4BBE3D009614CF /* fnv.swift */; };
 		8269D4871D4BBE3D009614CF /* fnv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8269D4851D4BBE3D009614CF /* fnv.swift */; };
 /* End PBXBuildFile section */
@@ -32,8 +31,11 @@
 		8269D4731D4BBA28009614CF /* FNVTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FNVTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8269D4781D4BBA28009614CF /* FNVTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FNVTests.swift; sourceTree = "<group>"; };
 		8269D47A1D4BBA28009614CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8269D4831D4BBA97009614CF /* README.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = README.rtf; sourceTree = "<group>"; };
 		8269D4851D4BBE3D009614CF /* fnv.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fnv.swift; sourceTree = "<group>"; };
+		82B605C81D4E2FB300D2332A /* hash_64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hash_64.c; sourceTree = "<group>"; };
+		82B605C91D4E2FB300D2332A /* hash_64a.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hash_64a.c; sourceTree = "<group>"; };
+		82B605CE1D4E312F00D2332A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		82B605D01D4E326000D2332A /* README.original */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.original; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		8269D45F1D4BBA28009614CF = {
 			isa = PBXGroup;
 			children = (
+				82B605CD1D4E310D00D2332A /* Documentation */,
 				8269D46B1D4BBA28009614CF /* FNV */,
 				8269D4771D4BBA28009614CF /* FNVTests */,
 				8269D46A1D4BBA28009614CF /* Products */,
@@ -78,8 +81,8 @@
 			children = (
 				8269D46C1D4BBA28009614CF /* FNV.h */,
 				8269D4851D4BBE3D009614CF /* fnv.swift */,
-				8269D4831D4BBA97009614CF /* README.rtf */,
 				8269D46E1D4BBA28009614CF /* Info.plist */,
+				82B605CC1D4E2FBE00D2332A /* C-source */,
 			);
 			path = FNV;
 			sourceTree = "<group>";
@@ -91,6 +94,24 @@
 				8269D47A1D4BBA28009614CF /* Info.plist */,
 			);
 			path = FNVTests;
+			sourceTree = "<group>";
+		};
+		82B605CC1D4E2FBE00D2332A /* C-source */ = {
+			isa = PBXGroup;
+			children = (
+				82B605C81D4E2FB300D2332A /* hash_64.c */,
+				82B605C91D4E2FB300D2332A /* hash_64a.c */,
+			);
+			name = "C-source";
+			sourceTree = "<group>";
+		};
+		82B605CD1D4E310D00D2332A /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				82B605D01D4E326000D2332A /* README.original */,
+				82B605CE1D4E312F00D2332A /* README.md */,
+			);
+			name = Documentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,7 +205,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8269D4841D4BBA97009614CF /* README.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +414,7 @@
 				8269D47F1D4BBA28009614CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8269D4801D4BBA28009614CF /* Build configuration list for PBXNativeTarget "FNVTests" */ = {
 			isa = XCConfigurationList;
@@ -402,6 +423,7 @@
 				8269D4821D4BBA28009614CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

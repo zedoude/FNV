@@ -16,9 +16,9 @@ let FNV_64_offset_basis : UInt = 0xcbf29ce484222325
 // It is an unsigned 64-bit value.
 let FNV_64_prime : UInt = 0x100000001b3
 
-func FNV1_hash( buffer : [UInt8] ) -> UInt {
+func FNV_64_hash( buffer : [UInt8], seed : UInt = FNV_64_offset_basis ) -> UInt {
     // By design, the starting hval is set to FNV_64_offset_basis
-    var hval : UInt = FNV_64_offset_basis
+    var hval : UInt = seed
     
     for bp : UInt8 in buffer {
         hval = hval &* FNV_64_prime    // Notice Swift's overflow operator.
@@ -28,9 +28,9 @@ func FNV1_hash( buffer : [UInt8] ) -> UInt {
     return hval
 }
 
-func FNV1_hash_string( buffer : String ) -> UInt {
+func FNV_64_hash_string( buffer : String, seed : UInt = FNV_64_offset_basis ) -> UInt {
     // By design, the starting hval is set to FNV_64_offset_basis
-    var hval : UInt = FNV_64_offset_basis
+    var hval : UInt = seed
     
     for bp : UInt8 in buffer.utf8 {
         hval = hval &* FNV_64_prime    // Notice Swift's overflow operator.
@@ -40,9 +40,9 @@ func FNV1_hash_string( buffer : String ) -> UInt {
     return hval
 }
 
-func FNV1a_hash( buffer : [UInt8] ) -> UInt {
+func FNVa_64_hash( buffer : [UInt8], seed : UInt = FNV_64_offset_basis ) -> UInt {
     // By design, the starting hval is set to FNV_64_offset_basis
-    var hval : UInt = FNV_64_offset_basis
+    var hval : UInt = seed
     
     for bp : UInt8 in buffer {
         hval = hval ^ UInt(bp)
@@ -52,9 +52,9 @@ func FNV1a_hash( buffer : [UInt8] ) -> UInt {
     return hval
 }
 
-func FNV1a_hash_string( buffer : String ) -> UInt {
+func FNVa_64_hash_string( buffer : String, seed : UInt = FNV_64_offset_basis ) -> UInt {
     // By design, the starting hval is set to FNV_64_offset_basis
-    var hval : UInt = FNV_64_offset_basis
+    var hval : UInt = seed
     
     for bp : UInt8 in buffer.utf8 {
         hval = hval ^ UInt(bp)

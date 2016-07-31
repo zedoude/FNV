@@ -29,7 +29,7 @@ class FNVTests: XCTestCase {
             result += str
             i+=1
         }
-        return FNV1_hash_string(result)
+        return FNV_64_hash_string(result)
     }
     
     func TEST0(str: String) -> UInt {
@@ -38,7 +38,7 @@ class FNVTests: XCTestCase {
             a.append(c)
         }
         a.append(0)
-        return FNV1_hash(a)
+        return FNV_64_hash(a)
     }
     
     func TESTA(src: [UInt8], _ times: Int = 1) -> UInt {
@@ -55,7 +55,7 @@ class FNVTests: XCTestCase {
             i+=1
         }
 
-        return FNV1_hash(a)
+        return FNV_64_hash(a)
     }
     
     func TEST1a(str: String, _ times: Int = 1) -> UInt {
@@ -66,7 +66,7 @@ class FNVTests: XCTestCase {
             result += str
             i+=1
         }
-        return FNV1a_hash_string(result)
+        return FNVa_64_hash_string(result)
     }
     
     func TEST1a0(str: String) -> UInt {
@@ -75,7 +75,7 @@ class FNVTests: XCTestCase {
             a.append(c)
         }
         a.append(0)
-        return FNV1a_hash(a)
+        return FNVa_64_hash(a)
     }
     
     func TEST1aA(src: [UInt8], _ times: Int = 1) -> UInt {
@@ -92,7 +92,7 @@ class FNVTests: XCTestCase {
             i+=1
         }
         
-        return FNV1a_hash(a)
+        return FNVa_64_hash(a)
     }
 
     func testFNV1_64bits() {
