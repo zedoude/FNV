@@ -29,7 +29,7 @@ class FNVTests: XCTestCase {
             result += str
             i+=1
         }
-        return FNV_64_hash_string(result)
+        return FNV_64_hash(result)
     }
     
     func TEST0(str: String) -> UInt {
@@ -66,7 +66,7 @@ class FNVTests: XCTestCase {
             result += str
             i+=1
         }
-        return FNVa_64_hash_string(result)
+        return FNVa_64_hash(result)
     }
     
     func TEST1a0(str: String) -> UInt {
@@ -95,6 +95,23 @@ class FNVTests: XCTestCase {
         return FNVa_64_hash(a)
     }
 
+    func testFNV_64_hash_0() {
+        let s = "afoobar"
+        let a : [UInt8] = Array(s.utf8)
+        
+        XCTAssertTrue( FNV_64_hash(a) == FNV_64_hash(s) )
+        XCTAssertTrue( s.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) == 7)
+        XCTAssertTrue( a.count == 7)
+    }
+    
+    func testFNV_64_hash_1() {
+        let s = "🐥"
+        let a : [UInt8] = Array(s.utf8)
+        
+        print("********** \(a.count) **********")
+        XCTAssertTrue( FNV_64_hash(a) == FNV_64_hash(s) )
+    }
+    
     func testFNV1_64bits() {
         XCTAssertTrue(TEST("") == 0xcbf29ce484222325)
         XCTAssertTrue(TEST("a") == 0xaf63bd4c8601b7be)

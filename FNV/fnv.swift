@@ -28,7 +28,7 @@ func FNV_64_hash( buffer : [UInt8], seed : UInt = FNV_64_offset_basis ) -> UInt 
     return hval
 }
 
-func FNV_64_hash_string( buffer : String, seed : UInt = FNV_64_offset_basis ) -> UInt {
+func FNV_64_hash( buffer : String, seed : UInt = FNV_64_offset_basis ) -> UInt {
     // By design, the starting hval is set to FNV_64_offset_basis
     var hval : UInt = seed
     
@@ -52,7 +52,7 @@ func FNVa_64_hash( buffer : [UInt8], seed : UInt = FNV_64_offset_basis ) -> UInt
     return hval
 }
 
-func FNVa_64_hash_string( buffer : String, seed : UInt = FNV_64_offset_basis ) -> UInt {
+func FNVa_64_hash( buffer : String, seed : UInt = FNV_64_offset_basis ) -> UInt {
     // By design, the starting hval is set to FNV_64_offset_basis
     var hval : UInt = seed
     
